@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700' rel='stylesheet' type='text/css'>
+
+<html>
+
+<body>
+
+
+    <header class="fixed-top">
+
+        <!--First navbar-->
+        <nav class="navbar navbar-expand-lg  navbar-light plantsnav" style="background-color : rgba(0,0, 0, 10%);">
+
+          
+            <ul class="navbar-nav mr-auto navbar-brand mb-0 h1">
+                <li class="nav-item active text-lg-left">
+                    <a href="#" class="nav-link" href="#"> <h5> <strong> Garden </strong>  Stockholm </h5>  </a>
+                </li>
+            </ul>
+
+
+
+            <div class="navbar-nav navbar-light navbar-static-top plantsnav" >
+
+
+                <ul class="list-inline list-unstyled text-center text-lg-right my-0 my-2 
+                        my-sm-0 mx-2 text-black">
+                    <li class="list-inline-item dropdown">
+                        <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <div class="text-center">
+                                <div><i class="fas fa-user "></i></div>
+                                <p class="my-0">My Account</p>
+                            </div>
+                        </a>
+
+                    </li >
+                    <li class="list-inline-item">
+                        <a class="nav-link "
+                            href="#">
+                            <div class="text-center">
+                                <div><i class="fas fa-heart "></i></div>
+                                <p class="my-0"> Favorites </p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link"
+                        href="{% url 'view_cart' %}">
+                            <div class="text-center">
+                                <div><i class="fas fa-shopping-cart "></i></div>
+                                <p class="my-0">
+                             Cart
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+          
+        </nav>
+    
+
+  
+       
+        <!--Second navbar-->
+        <nav class="navbar navbar-expand-lg navbar-light  plantsnav" id="secondnav" style="border-top: 2px solid black; background-color: rgba(0,0, 0, 10%);">
+
+ 
+
+            <ul class="list-inline list-unstyled text-center dropdown text-lg-right my-0 px-3">
+                <li class="list-inline-item dropdown">
+                    <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        <h5> Shop</h5>
+                    </a>
+                    <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+                        <a href="#" class="dropdown-item">All Plants</a>
+                        <a href="#" class="dropdown-item ">Flower Plants</a>
+                        <a href="#" class="dropdown-item ">House Plants</a>
+                        <a href="#"  class="dropdown-item ">Beginner Plants</a>
+                        <a href="#"  class="dropdown-item">Office Plants</a>
+                        <a href="#"  class="dropdown-item ">Succulents</a>
+                        <a href="#"  class="dropdown-item">Best Selling</a>
+                    </div>
+                </li>
+                <li class="list-inline-item px-3">
+                    <a href="#">
+                        <h5> Inspiration </h5>
+                    </a>
+                </li>
+                <li class="list-inline-item px-3">
+                    <a href="#">
+                        <h5> Plants Doctor </h5>
+                    </a>
+                </li>
+            </ul>
+            </ul>
+
+
+            <div class="navbar-nav ml-auto">
+                <form method="GET" action="#">
+                    <div class="input-group w-100">
+                        <input class="form-control border border-black rounded-0" type="text" name="q"
+                            placeholder="Search our site">
+                        <div class="input-group-append">
+                            <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                                <span class="icon">
+                                    <i class="fas fa-search"></i>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </nav>
+
+
+
+       
+
+
+
+        <div id="delivery-banner" style="   margin-bottom: 0;
+        background-color: black;
+        color: aliceblue;">
+            <nav class="nav nav-pills nav-fill text-black logo-font">
+                <a class="nav-item nav-link "> 
+                    <i class="fas fa-check"> </i> 
+                   Free delivery on orders over $50!
+                </a>
+                <a class="nav-item nav-link">
+                    <a class="nav-item nav-link "> 
+                        <i class="fas fa-check"> </i> 
+                        30 days plants health guarantee
+
+                    </a>
+                </a>
+                <a class="nav-item nav-link">
+                    <a class="nav-item nav-link "> 
+                        <i class="fas fa-check"> </i> 
+                        4.6/5 out of 12.000+ reviews
+                    </a>
+                </a>
+                <a class="nav-item nav-link">
+                    <a class="nav-item nav-link "> 
+                        <i class="fas fa-check"> </i> 
+                        Shipped in 1 business day
+                    </a>
+                </a>
+              </nav>
+            </div>
+
+
+    </header>
+
+
+    <div class="container-fluid">
+
+        <div class="row flex-row ">
+            <div class="make-3D-space" class="col-3">
+
+                <div class="product-card" class="product-card">
+                    <div id="product-front">
+                        <div class="shadow"></div>
+                        <img src="images/plant33.jpg" alt="" />
+                        <div class="image_overlay"></div>
+                        <div id="view_details">View details</div>
+                        <div class="stats">
+                            <div class="stats-container card-body" >
+                                <span class="product_price">$39,99</span>
+                                <span class="product_name">Aeonium Kiwi</span>
+                                
+
+                                <div class="product-options">
+
+                                    <strong>COLORS</strong>
+                                    <div class="colors"  name="product_color" id='id_product_color'>
+                                        <div class="c-blue"><span></span></div>
+                                        <div class="c-red"><span></span></div>
+                                        <div class="c-white"><span></span></div>
+                                        <div class="c-green"><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="make-3D-space col-3">
+
+              
+                <div  class="product-card">
+                    <div  class="product-front">
+                        <div class="shadow"></div>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
+                        <div class="image_overlay"></div>
+                        <div id="view_details">View Product</div>
+                        <div class="stats">
+                            <div class="stats-container">
+                                <span class="product_price">$39</span>
+                                <span class="product_name">Adidas Originals</span>
+                                <p>Men's running shirt</p>
+
+                                <div class="product-options">
+
+                                    <strong>COLORS</strong>
+                                    <div class="colors">
+                                        <div class="c-blue"><span></span></div>
+                                        <div class="c-red"><span></span></div>
+                                        <div class="c-white"><span></span></div>
+                                        <div class="c-green"><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                  
+            <div class="make-3D-space col-3">
+
+              
+                <div  class="product-card">
+                    <div  class="product-front">
+                        <div class="shadow"></div>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
+                        <div class="image_overlay"></div>
+                        <div id="view_details">View details</div>
+                        <div class="stats">
+                            <div class="stats-container">
+                                <span class="product_price">$39</span>
+                                <span class="product_name">Adidas Originals</span>
+                                <p>Men's running shirt</p>
+
+                                <div class="product-options">
+
+                                    <strong>COLORS</strong>
+                                    <div class="colors">
+                                        <div class="c-blue"><span></span></div>
+                                        <div class="c-red"><span></span></div>
+                                        <div class="c-white"><span></span></div>
+                                        <div class="c-green"><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="make-3D-space col-3">
+
+              
+                <div  class="product-card">
+                    <div  class="product-front">
+                        <div class="shadow"></div>
+                        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/245657/t-shirt.png" alt="" />
+                        <div class="image_overlay"></div>
+                        <div id="view_details">View details</div>
+                        <div class="stats">
+                            <div class="stats-container">
+                                <span class="product_price">$39</span>
+                                <span class="product_name">Adidas Originals</span>
+                                <p>Men's running shirt</p>
+
+                                <div class="product-options">
+
+                                    <strong>COLORS</strong>
+                                    <div class="colors">
+                                        <div class="c-blue"><span></span></div>
+                                        <div class="c-red"><span></span></div>
+                                        <div class="c-white"><span></span></div>
+                                        <div class="c-green"><span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>
